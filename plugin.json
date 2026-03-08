@@ -1,0 +1,20 @@
+{
+  "name": "copilot-implementer",
+  "description": "Spec-Driven Development agent that takes specifications and implements them faithfully with TDD, section by section. Part of the sdd-vscode-agents collection.",
+  "version": "1.0.0",
+  "author": { "name": "SufficientDaikon" },
+  "license": "MIT",
+  "homepage": "https://github.com/SufficientDaikon/copilot-implementer",
+  "repository": "https://github.com/SufficientDaikon/copilot-implementer",
+  "keywords": [
+    "sdd",
+    "implementation",
+    "tdd",
+    "spec-driven",
+    "code-generation"
+  ],
+  "category": "Development Workflows",
+  "tags": ["sdd-vscode-agents"],
+  "agents": "agents/",
+  "hooks": "hooks.json"
+}
