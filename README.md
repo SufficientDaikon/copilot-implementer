@@ -1,70 +1,63 @@
+<div align="center">
+
+<img src="https://img.shields.io/badge/VS%20Code%20Copilot%20Agent-Implementation%20Engineer-A177FE?style=for-the-badge&logo=github-copilot&logoColor=white" />
+
 # copilot-implementer
 
-> **Part of [sdd-vscode-agents](https://github.com/SufficientDaikon/sdd-vscode-agents)** — install the full collection for the complete SDD pipeline + UI/UX lifecycle.
+*Builds production code from specs, section by section, with comprehensive tests.*
 
-A VS Code Copilot agent plugin that takes a comprehensive specification and implements it faithfully, section by section, following test-driven development.
+[![Part of SDD Agent Suite](https://img.shields.io/badge/Part%20of-SDD%20Agent%20Suite-A177FE?style=flat-square)](https://github.com/SufficientDaikon/sdd-vscode-agents)
 
-## What it does
+</div>
 
-The **implementer** agent takes your approved specification and builds it:
-- Section-by-section implementation following spec priority order
-- Test-driven: writes tests from acceptance criteria BEFORE implementation
-- Creates a 	asks.md tracking file for progress
-- Builds incrementally — verifies each section works before moving on
-- Handles edge cases and error scenarios defined in the spec
+---
 
-## Hooks included
+## What It Does
 
-| Hook | Event | What it does |
-|------|-------|-------------|
-| **Spec detection** | `SessionStart` | Auto-detects spec files, existing tasks.md for resuming, and project type (Node.js, Python, etc.) |
-| **Completion report** | `Stop` | Checks implementation progress and reminds you to hand off to the reviewer agent |
+The **Implementer** agent is your production-grade coding partner. Feed it a specification (ideally from the Spec Writer), and it will methodically build the implementation section by section, writing tests alongside the code.
 
-## Install
+It follows a strict TDD approach — for each section of the spec, it first writes tests based on acceptance criteria, then implements the code to make those tests pass. This ensures every feature is verified as it's built, not as an afterthought.
 
-### Via Copilot CLI
-```bash
-copilot plugin install SufficientDaikon/copilot-implementer
-```
+The Implementer handles the full stack: backend APIs, database schemas, frontend components, utility functions, and integration points. It produces clean, well-structured code that follows established patterns in your codebase.
 
-### Via VS Code settings
+## Features
 
-Clone the repo and add to your `settings.json`:
-```json
-"chat.plugins.paths": {
-    "/path/to/copilot-implementer": true
-}
-```
+- ✅ Test-driven development from acceptance criteria
+- ✅ Incremental section-by-section implementation
+- ✅ Full-stack code generation (backend, frontend, database)
+- ✅ Consistent code style matching your existing codebase
 
-### Via local path
-```bash
-git clone https://github.com/SufficientDaikon/copilot-implementer.git
-copilot plugin install ./copilot-implementer
-```
+## Installation
+
+1. Install the [SDD VS Code Agents](https://github.com/SufficientDaikon/sdd-vscode-agents) extension
+2. Open VS Code Copilot Chat
+3. Use `@implementer` to invoke this agent
 
 ## Usage
 
-Switch to the **implementer** agent in VS Code chat, then:
 ```
-Implement the specification in project-spec.md
-```
-**Expected output**: Working code with tests, organized by spec sections, with a tasks.md tracking progress.
-
-## Pipeline position
-
-```
-spec-writer -> **implementer** -> reviewer
+@implementer Implement the user authentication spec from section 1
 ```
 
-## Full collection
+## Part of the SDD Agent Suite
 
-This agent works best as part of the full SDD + UI/UX pipeline. Install all 13 agents:
+This agent is one of 13 specialized Copilot Chat participants in the [SDD VS Code Agents](https://github.com/SufficientDaikon/sdd-vscode-agents) ecosystem.
 
-```bash
-copilot plugin install SufficientDaikon/sdd-vscode-agents
-```
-
-See the [full collection](https://github.com/SufficientDaikon/sdd-vscode-agents) for documentation and the complete agent list.
+| Agent | Role |
+|---|---|
+| **spec-writer** | Specification Architect |
+| **implementer** | Implementation Engineer |
+| **reviewer** | Compliance Reviewer |
+| **packager** | Package Engineer |
+| **ui-lifecycle-master** | UI Lifecycle Orchestrator |
+| **ux-research** | UX Researcher |
+| **info-arch** | Information Architect |
+| **wireframe** | Wireframe Designer |
+| **ui-design** | Visual Designer |
+| **ux-design** | UX Designer |
+| **frontend-impl** | Frontend Engineer |
+| **design-reviewer** | Design Reviewer |
+| **ux-testing** | UX Tester |
 
 ## License
 
